@@ -9,7 +9,7 @@ namespace SearchTree
 {
     class Program
     {
-        
+       
         static void Main(string[] args)
         {
             BinarySearchTree myList = new BinarySearchTree();
@@ -25,7 +25,9 @@ namespace SearchTree
             myList.Add(node4);
             myList.Add(node5);
 
-           // for(int i = 0; i < myList.)
+            bool isfound = myList.Search(9);
+            Console.WriteLine(isfound);
+            Console.ReadLine();
         }
     }
 }

@@ -10,7 +10,6 @@ namespace SearchTree
     {
         public Node RootNode;
 
-        // 10, 20
         public void Add(Node nodeToAdd)
         {
           
@@ -65,9 +64,40 @@ namespace SearchTree
                 }
             }
         }
-        public void Search(Node nodeToFind)
+        public bool Search(int findValue)
         {
-             
+            Node currentNode;
+            if(findValue == RootNode.Data)
+            {
+                return true;
+            }
+            else if (findValue > RootNode.Data)
+            {
+                currentNode = RootNode.RightNode;
+                do
+                {
+                    if (findValue == currentNode.Data)
+                    {
+                        return true;
+                    }
+                } while (currentNode.RightNode != null);
+               
+                return false;
+            }
+            else if(findValue < RootNode.Data)
+            {
+                currentNode = RootNode.LeftNode;
+                do
+                {
+                    if (findValue == currentNode.Data)
+                    {
+                        return true;
+                    }
+                } while (currentNode.LeftNode != null);
+
+                return false;
+            }
+            return false;
         }
     }
 }
